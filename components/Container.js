@@ -2,13 +2,19 @@ import { useRouter } from 'next/router'
 import Head from 'next/head'
 import Nav from './Nav'
 import Footer from './Footer'
+import { Inter } from '@next/font/google'
+
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['200', '400', '600', '700']
+})
 
 export default function Container(props) {
   const { children, ...customMeta } = props
   const router = useRouter()
   const meta = {
-    title: 'Evis template',
-    description: `Evis`,
+    title: props.title ?? 'EVIS',
+    description: `A EVIS (Experiência Virtual Imersiva em Saúde) é uma healthtech de educação e aperfeiçoamento profissional em saúde através da realidade virtual.`,
     type: 'website',
     image: '/site.png',
     ...customMeta,
@@ -36,7 +42,7 @@ export default function Container(props) {
         {meta.date && <meta property="article:published_time" content={meta.date} />}
       </Head>
       <Nav />
-      <main id="skip" className="px-4">
+      <main id="skip" className={ inter.className }>
         {children}
       </main>
       <Footer />

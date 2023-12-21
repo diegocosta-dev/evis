@@ -6,7 +6,7 @@ export default function Home({ posts }) {
   return (
     <Container>
       <div className="mx-auto mb-16 max-w-2xl">
-        {!posts.length && <p className="mb-4 text-gray-600">No posts found.</p>}
+        {!posts.length && <p className="mb-4 text-gray-700">No posts found.</p>}
 
         {posts.map((post) => {
           const postImage = post.properties['Cover Image'].files[0]
@@ -25,7 +25,7 @@ export default function Home({ posts }) {
               )}
               <Link className="w-full" href={`/${post.properties.Slug.rich_text[0].plain_text}`}>
                 <div className="w-full">
-                  <h3 className="w-full text-xl font-medium text-gray-900">
+                  <h3 className="w-full text-xl font-medium text-gray-700">
                     {post.properties.Post.title[0].plain_text}
                   </h3>
                   <p className="text-gray-700">

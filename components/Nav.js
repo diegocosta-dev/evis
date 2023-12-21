@@ -2,15 +2,23 @@ import Link from 'next/link'
 
 export default function Nav() {
   return (
-    <nav className="mx-auto my-0 flex w-full max-w-4xl items-center justify-center p-8 md:my-8">
+    <nav className="mx-auto flex w-full max-w-screen-xl items-center justify-between px-10 py-5">
       <div>
-        <Link href="/" className="p-1 text-gray-900 hover:underline sm:p-4">
+        <Link href="/" className="">
+          Logo Here
+        </Link>
+      </div>
+      <div className='flex items-center gap-[30px]'>
+        <Link href="/" className="text-gray-700 transition-all hover:text-blue">
           Home
         </Link>
-        <Link href="/news" className="p-1 text-gray-900 hover:underline sm:p-4">
-          News
+        <Link href="/about" className="text-gray-700 transition-all hover:text-blue">
+          About
         </Link>
-        <Link href="/contact" className="p-1 text-gray-900 hover:underline sm:p-4">
+        <Link href="/blog" className="text-gray-700 transition-all hover:text-blue">
+          Blog
+        </Link>
+        <Link href="/contact" className="rounded bg-blue p-[14px] text-white transition-all hover:bg-ligth-blue">
           Contact
         </Link>
       </div>
